@@ -7,12 +7,94 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <!-- USING BULMA FOR PRACTICE FOR PROJECT -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Weather Me This!</title>
 </head>
 <body>
+    <header class="hero">
+        <div class="hero-body container">
+            <p class="title has-text-white">
+                Weather Site
+            </p>
+        </div>
+    </header>
 
-<h1>Weather Site</h1>
+    <main class="columns">
+        <!-- Left menu -->
+        <div class="column is-one-third">
+            <h1>Search For A City: </h1>
+            <input class="input is-info m-2" type="text" placeholder="Enter City Name">
+            <input class="button is-info is-small is-fullwidth m-2" type="submit" value="Search">
+            <h1>Or, select one from below:</h1>
+            <div class="select is-multiple is-info">
+                <select multiple size="8">
+                    <option id="newyork"> New York </option>
+                    <option id="austin"> Austin </option>
+                    <option id="orlando"> Orlando </option>
+                    <option id="phoenix"> Phoenix </option>
+                    <option id="sanfrancisco"> San Francisco </option>
+                    <option id="denver"> Denver </option>
+                    <option id="seattle"> Seattle </option>
+                    <option id="atlanta"> Atlanta </option>
+                    <option id="chicago"> Chicago </option>
+                </select>
+            </div>
+        </div>
+        <!-- Right information -->
+        <div class="column">
+            <section class="box">
+                <h2 class="title">Today's Info</h2>
+                <ul class="weather-info">
+                    <li class="weather-detail" id="temperature">
+                        temp: 70 degrees F
+                    </li>
+                    <li class="weather-detail" id="wind"> 
+                        6.67 MPH
+                    </li>
+                    <li class="weather-detail" id="humidity">
+                        46%
+                    </li>
+                    <li class="weather-detail" id="uv">
+                        UV Index:<span class="uv-color">0.47</span> 
+                    </li>
+                </ul>
+              
+            </section>
+            <section class="columns">
+                
+                <div class="card column  m-3">
+                    <div class="card-content">
+                        <p class="title">ex date 03/21/32</p>
+                    </div>
+                </div>
+                <div class="card column  m-3">
+                    <div class="card-content">
+                        <p class="title">ex date 03/21/32</p>
+                    </div>
+                </div>
+                <div class="card column  m-3">
+                    <div class="card-content">
+                        <p class="title">ex date 03/21/32</p>
+                    </div>
+                </div>
+                <div class="card column  m-4">
+                    <div class="card-content">
+                        <p class="title">ex date 03/21/32</p>
+                    </div>
+                </div>
+                <div class="card column  m-3">
+                    <div class="card-content">
+                        <p class="title">ex date 03/21/32</p>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+        
+    </main>
+
 
 
   <script src="./assets/js/script.js"></script> 

@@ -1,0 +1,10 @@
+.uv-color {
+    border: 3px solid green;
+    background-color: green;
+    border-radius: 30%;
+    color: white;
+}
+header {
+    
+    background-image: linear-gradient(to right, rgb(37, 103, 247), rgb(5, 3, 83));;
+}
