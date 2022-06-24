@@ -8,3 +8,13 @@ header {
     
     background-image: linear-gradient(to right, rgb(37, 103, 247), rgb(5, 3, 83));;
 }
+.day-date{
+    font-size: small;
+    color: white;
+    background-color: rgb(37, 103, 247);
+    text-align: center;
+}
+.blue {
+    background-color: rgb(16, 16, 109);
+    color: white;
+}

@@ -21,72 +21,85 @@
         </div>
     </header>
 
-    <main class="columns">
+    <main class="columns" id="main-page">
         <!-- Left menu -->
-        <div class="column is-one-third">
+        <form class="column is-one-third" id="search-form">
             <h1>Search For A City: </h1>
-            <input class="input is-info m-2" type="text" placeholder="Enter City Name">
-            <input class="button is-info is-small is-fullwidth m-2" type="submit" value="Search">
+            <input class="input is-info m-2" id="city-name" type="text" placeholder="Enter City Name"/>
+            <button class="button is-info is-small is-fullwidth m-2" type="submit">Search</button>
+           
+            
+            
             <h1>Or, select one from below:</h1>
-            <div class="select is-multiple is-info">
+            <div class="select is-multiple is-info" id="choice-menu" >
                 <select multiple size="8">
-                    <option id="newyork"> New York </option>
+                    <option id="new york"> New York </option>
                     <option id="austin"> Austin </option>
                     <option id="orlando"> Orlando </option>
                     <option id="phoenix"> Phoenix </option>
-                    <option id="sanfrancisco"> San Francisco </option>
+                    <option id="san francisco"> San Francisco </option>
                     <option id="denver"> Denver </option>
                     <option id="seattle"> Seattle </option>
                     <option id="atlanta"> Atlanta </option>
                     <option id="chicago"> Chicago </option>
                 </select>
             </div>
-        </div>
+        </form>
         <!-- Right information -->
+        <!-- TODAYS WEATHER -->
         <div class="column">
-            <section class="box">
-                <h2 class="title">Today's Info</h2>
+            <section class="box" id="current-weather">
+                <h2 class="title" id="city"></h2>
                 <ul class="weather-info">
+                    <li class="weather-detail">
+                        <img id="weather-icon"/>
+                    </li>
                     <li class="weather-detail" id="temperature">
-                        temp: 70 degrees F
+                        
                     </li>
                     <li class="weather-detail" id="wind"> 
-                        6.67 MPH
+                       
                     </li>
                     <li class="weather-detail" id="humidity">
-                        46%
+                        
                     </li>
                     <li class="weather-detail" id="uv">
-                        UV Index:<span class="uv-color">0.47</span> 
+                        
                     </li>
                 </ul>
               
             </section>
+            <!-- FIVE DAY FORECAST -->
             <section class="columns">
                 
-                <div class="card column  m-3">
-                    <div class="card-content">
-                        <p class="title">ex date 03/21/32</p>
+                <div class="card column  m-3 blue" >
+                    <div class="card-content" id="day-0">
+                        
+                        
                     </div>
                 </div>
-                <div class="card column  m-3">
-                    <div class="card-content">
-                        <p class="title">ex date 03/21/32</p>
+                <div class="card column  m-3 blue" >
+                    <div class="card-content" id="day-1">
+                        
+                        
                     </div>
                 </div>
-                <div class="card column  m-3">
-                    <div class="card-content">
-                        <p class="title">ex date 03/21/32</p>
+                <div class="card column  m-3 blue" >
+                    <div class="card-content" id="day-2">
+                        
+                        
                     </div>
                 </div>
-                <div class="card column  m-4">
-                    <div class="card-content">
-                        <p class="title">ex date 03/21/32</p>
+                <div class="card column  m-3 blue" >
+                    <div class="card-content" id="day-3">
+                        
+                       
                     </div>
                 </div>
-                <div class="card column  m-3">
-                    <div class="card-content">
-                        <p class="title">ex date 03/21/32</p>
+                <div class="card column  m-3 blue" >
+                    <div class="card-content" id="day-4">
+                        
+                       
                     </div>
                 </div>
             </section>
