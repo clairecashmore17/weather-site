@@ -25,8 +25,7 @@ function fetchWeatherStats(city){
         if(response.ok){
             response.json()
             .then(function(data){
-                console.log(data);
-                
+
                 currentWeather(data);
                 
             })
@@ -49,9 +48,7 @@ function fetchGeoLocation(city){
         if(response.ok){
             response.json()
             .then(function(data){
-                console.log(data[0].lat)
-                console.log(data[0].lon)
-                console.log(data[0].name)
+                
                 cityname = data[0].name;
                 fetchWeatherStats2(data[0].lat, data[0].lon)
             })
@@ -69,8 +66,7 @@ function fetchWeatherStats2(lat, lon){
         if(response.ok){
             response.json()
             .then(function(data){
-                console.log(data.current.weather);
-                
+                                
                 showFiveDay(data.daily);
             })
         }
@@ -91,7 +87,7 @@ function showFiveDay(dayArray){
             //If our card already has information in it, we will remove them before we create more
             var weatherList = document.querySelectorAll("[data-id]");
             var dates = document.querySelectorAll("[data-date]");
-            console.log(weatherList);
+            
             // the arrow is used to replace the function words
             weatherList.forEach(el =>{
                 el.remove();
@@ -141,6 +137,7 @@ function showFiveDay(dayArray){
         cardEl.appendChild(dayDate);
         cardEl.appendChild(weatherListEl);
     }
+    //Lets us know that we have now populated our cards with information
     populated = true;
 
 };
@@ -148,7 +145,6 @@ function showFiveDay(dayArray){
 //function to add the Searched City to our menu
 function createMenuOption(cityName) {
     
-    console.log("Our city menu new name is " + cityName);
     var selectEl = document.querySelector("#menu-select");
     var menuOption = document.createElement("option");
     menuOption.id = cityName;
@@ -159,14 +155,13 @@ function createMenuOption(cityName) {
 }
 
 
-
 //Function that deals with user search Input
 function searchSubmitHandler(event){
-    // console.log("I clicked search!");
+   
     event.preventDefault();
 
     var userCity = cityInputEl.value.trim();
-    
+    //Create our search history in our menu
     createMenuOption(userCity);
     
     if(userCity){
@@ -177,6 +172,7 @@ function searchSubmitHandler(event){
         cityInputEl.value ="";
     }
 }
+
 //Function to deal with menu choices
 function menuClickHandler(event){
     targetEl= event.target;
@@ -186,8 +182,10 @@ function menuClickHandler(event){
 
 //Function to fill out the current weather information
 function currentWeather(city){
+    //Create a disabled button to represent the color indicator of the uv index
     var uvBoxEl = document.createElement("button");
     uvBoxEl.title = "Disabled button";
+    // All the if statements to determine which color we will set it as
     if(city.current.uv <= 2){
         uvBoxEl.classList = "button is-success";
     }
@@ -204,10 +202,10 @@ function currentWeather(city){
         uvBoxEl.classList = "button is-violet";
     }
     
+    //Set our text elements to the current city's info
     cityNameKnown = city.location.name;
     currentPlaceEl.textContent = city.location.name + " (" + city.location.localtime + ")";
     var currentIconEl = document.getElementById("weather-icon").src = "https:" + city.current.condition.icon;
-    console.log(currentIconEl);
     currentTempEl.textContent = "Temp: " + city.current.temp_f + "° F";
     currentWindEl.textContent = "Wind: " + city.current.wind_mph + " MPH";
     currentHumidEl.textContent = "Humidity: " + city.current.humidity + "%";
@@ -216,6 +214,6 @@ function currentWeather(city){
     currentUVEl.appendChild(uvBoxEl);
 };
 
-
+//Our event listeners
 searchFormEl.addEventListener("submit", searchSubmitHandler);
 cityMenuEl.addEventListener("click", menuClickHandler);
