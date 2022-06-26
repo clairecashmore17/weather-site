@@ -13,6 +13,7 @@ var cityMenuEl = document.querySelector("#choice-menu");
 var populated = false;
 var j =1;
 
+
 // Function to get the current weather stats
 function fetchWeatherStats(city){
 
@@ -103,7 +104,7 @@ function showFiveDay(dayArray){
     }
     
     for(var i = 0; i < 5; i++){
-        // console.log(dayArray[i].date)
+        
         //Create dates for 5 days
         
         var cardEl = document.querySelector("#day-"+i);
@@ -144,15 +145,34 @@ function showFiveDay(dayArray){
 
 };
 
+//function to add the Searched City to our menu
+function createMenuOption(cityName) {
+    
+    console.log("Our city menu new name is " + cityName);
+    var selectEl = document.querySelector("#menu-select");
+    var menuOption = document.createElement("option");
+    menuOption.id = cityName;
+    menuOption.textContent = cityName;
+    selectEl.appendChild(menuOption);
+
+
+}
+
+
+
 //Function that deals with user search Input
 function searchSubmitHandler(event){
     // console.log("I clicked search!");
     event.preventDefault();
 
     var userCity = cityInputEl.value.trim();
+    
+    createMenuOption(userCity);
+    
     if(userCity){
         fetchWeatherStats(userCity)
         fetchGeoLocation(userCity);
+        
         //Clear out the search bar when finished
         cityInputEl.value ="";
     }
@@ -183,8 +203,8 @@ function currentWeather(city){
     else if(city.current.uv > 10){
         uvBoxEl.classList = "button is-violet";
     }
-   
-
+    
+    cityNameKnown = city.location.name;
     currentPlaceEl.textContent = city.location.name + " (" + city.location.localtime + ")";
     var currentIconEl = document.getElementById("weather-icon").src = "https:" + city.current.condition.icon;
     console.log(currentIconEl);
