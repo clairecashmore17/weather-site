@@ -18,3 +18,9 @@ header {
     background-color: rgb(16, 16, 109);
     color: white;
 }
+.is-orange {
+    background-color: orangered;
+}
+.is-violet {
+    background-color: violet;
+}
