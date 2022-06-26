@@ -1,5 +1,5 @@
 //Global variables
-var apiKey = "056ce8fbcebf599ddf3dd6cf847ed696";
+
 var currentWeatherEl = document.querySelector("#current-weather");
 var cityname = "";
 var currentTempEl = document.querySelector("#temperature");
@@ -11,8 +11,10 @@ var cityInputEl = document.querySelector("#city-name");
 var searchFormEl = document.querySelector("#search-form");
 var cityMenuEl = document.querySelector("#choice-menu");
 var populated = false;
-var dateToday = new Date();
 
+
+var dateToday = new Date();
+var apiKey = "056ce8fbcebf599ddf3dd6cf847ed696";
 //Function to fetch the geo-location
 function fetchGeoLocation(city){
     var geoApiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid="+ apiKey;
