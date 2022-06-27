@@ -108,7 +108,35 @@ function showFiveDay(dayArray){
         dayDate.setAttribute("data-date", i);
         dayDate.classList = "title day-date";
         // debugger
-        dayDate.textContent = (dateToday.getDate() + j) + "/" + dateToday.getMonth() + "/" + dateToday.getFullYear();
+        var today = dateToday.getDate();
+        var thisMonth = dateToday.getMonth() +1;
+        console.log(thisMonth);
+        // If statements for when the date goes past the month
+        if(thisMonth == 1 || thisMonth == 3 ||thisMonth == 4 ||thisMonth == 6||thisMonth == 9 ||thisMonth == 11  ){
+            console.log("Our month only has 30 days");
+            if(today+j > 30){
+                console.log("we are currently too far on : " + today);
+                today-=30;
+                thisMonth++;
+            }
+        }
+        else if(thisMonth == 2){
+            console.log("Our month only has 29 days");
+            if(today+j > 29){
+                console.log("we are currently too far on : " + today);
+                today=1;
+                thisMonth++;
+            }
+        }
+        else {
+            console.log("Our month only has 31 days");
+            if(today+j > 32){
+                console.log("we are currently too far on : " + today);
+                today=1;
+                thisMonth++;
+            }
+        }
+        dayDate.textContent = thisMonth + "/" + (today + j) + "/" + dateToday.getFullYear();
         j++;
         //create weather lists
         var weatherListEl = document.createElement("ul");
